@@ -1,0 +1,4 @@
+[submodule "resources/js/themes/aurora"]
+	path = resources/js/themes/aurora
+	url = https://git.krews.org/Laura/aurora
+	branch = main
