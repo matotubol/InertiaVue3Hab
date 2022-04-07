@@ -27,7 +27,7 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth:sanctum')->group(function () {
 
-    Route::get('/me', [IndexController::class, 'me'])->name('me');
+    Route::get('/me', [IndexController::class, 'me'])->name('index.me');
     Route::get('/logout', 'Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@destroy')
-        ->name('logout');
+        ->name('index.logout');
 });

@@ -3,6 +3,8 @@ require("./bootstrap");
 import { createApp, h } from "vue";
 import { createInertiaApp, Link } from "@inertiajs/inertia-vue3";
 import { InertiaProgress } from "@inertiajs/progress";
+import { ZiggyVue } from "ziggy";
+import { Ziggy } from "./ziggy";
 import "flowbite";
 
 const appName =
@@ -14,8 +16,9 @@ createInertiaApp({
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
             .use(plugin)
+            .use(ZiggyVue, Ziggy)
             .component("Link", Link)
-            .mixin({ methods: { route } })
+            .mixin({ methods: { route: window.route } })
             .mount(el);
     },
 });

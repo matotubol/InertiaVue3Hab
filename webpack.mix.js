@@ -1,4 +1,5 @@
 const mix = require("laravel-mix");
+const path = require("path");
 
 /*
  |--------------------------------------------------------------------------
@@ -10,6 +11,9 @@ const mix = require("laravel-mix");
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.alias({
+    ziggy: path.resolve("vendor/tightenco/ziggy/dist/vue"),
+});
 
 mix.js("resources/js/app.js", "public/js")
     .vue({ version: 3, extractStyles: "public/css/vue-styles.css" })
@@ -20,7 +24,6 @@ mix.js("resources/js/app.js", "public/js")
     .alias({
         "@": "resources/js",
     });
-
 if (mix.inProduction()) {
     mix.version();
 }
