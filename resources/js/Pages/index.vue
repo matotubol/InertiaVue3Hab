@@ -89,7 +89,7 @@ export default {
 
                         <Link
                             class="block underline text-sm text-gray-600 hover:text-gray-900 mb-4"
-                            href="/register"
+                            :href="route('register')"
                             >Don't have an account?</Link
                         >
                         <jet-button>Login</jet-button>

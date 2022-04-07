@@ -30,10 +30,13 @@ class JetstreamServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Fortify::authenticateUsing(function (Request $request) {
-            $user = User::where(fn (Builder $query) => $query->where('username', $request->mail)->orWhere('mail', $request->mail))->first();
-            if ($user && Hash::check($request->password, $user->password)) {
-                $user->update(['ip_current' => $request->ip(), 'last_online' => Carbon::now()->timestamp]);
+         Fortify::authenticateUsing(function (Request $request) {
+            $user = User::where('username', $request->mail)
+                ->orWhere('mail', $request->mail)
+                ->first();
+    
+            if ($user &&
+                Hash::check($request->password, $user->password)) {
                 return $user;
             }
         });

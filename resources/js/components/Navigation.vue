@@ -27,31 +27,13 @@ export default {
                 Homepage
             </JetButton>
         </Link>
-        <Link :href="route('logout')" class="mr-2">
-            <JetButton
-                ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="mr-3 h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    /></svg
-                >Logout</JetButton
-            >
-        </Link>
         <JetButton
             id="dropdownDefault"
             data-dropdown-toggle="dropdown"
             class="text-white focus:outline-none focus:ring-blue-300 font-medium text-center inline-flex items-center"
             type="button"
         >
-            Dropdown button
+            Community
             <svg
                 class="ml-2 w-4 h-4"
                 fill="none"
@@ -80,51 +62,33 @@ export default {
                     <a
                         href="#"
                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >Dashboard</a
+                        >Nieuws</a
                     >
                 </li>
                 <li>
                     <a
                         href="#"
                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >Settings</a
+                        >Medewerkers</a
                     >
                 </li>
                 <li>
                     <a
                         href="#"
                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >Earnings</a
+                        >Winkel</a
                     >
                 </li>
                 <li>
                     <a
                         href="#"
                         class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >Sign out</a
+                        >Ruilwaardes</a
                     >
                 </li>
             </ul>
         </div>
-        <Link href="/staff" class="mr-2">
-            <JetButton
-                ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="mr-3 h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    /></svg
-                >Staff</JetButton
-            >
-        </Link>
-        <Link href="/store" class="mr-2">
+        <Link :href="route('auth.logout')" class="mr-2">
             <JetButton
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +103,7 @@ export default {
                         stroke-linejoin="round"
                         d="M14.121 15.536c-1.171 1.952-3.07 1.952-4.242 0-1.172-1.953-1.172-5.119 0-7.072 1.171-1.952 3.07-1.952 4.242 0M8 10.5h4m-4 3h4m9-1.5a9 9 0 11-18 0 9 9 0 0118 0z"
                     /></svg
-                >Store</JetButton
+                >Logout</JetButton
             >
         </Link>
         <Link v-if="$page.me" href="/settings/email" class="mr-2">

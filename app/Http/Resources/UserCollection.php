@@ -20,7 +20,7 @@ class UserCollection extends ResourceCollection
             'account_created' => $this->account_created,
             'last_login' => $this->last_login,
             'last_online' => Carbon::parse($this->last_online)->diffForHumans(),
-            'motto' => $this->motto,
+            'motto' => 'test',
             'look' => $this->look,
             'gender' => $this->gender,
             'rank' => $this->rank,

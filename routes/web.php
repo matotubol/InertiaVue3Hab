@@ -29,5 +29,5 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/me', [IndexController::class, 'me'])->name('index.me');
     Route::get('/logout', 'Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@destroy')
-        ->name('index.logout');
+        ->name('auth.logout');
 });

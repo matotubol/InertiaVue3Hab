@@ -34,7 +34,6 @@
         "webpack-node-externals": "^3.0.0"
     },
     "dependencies": {
-        "flowbite": "^1.4.1",
-        "ziggy-js": "^1.4.5"
+        "flowbite": "^1.4.1"
     }
 }

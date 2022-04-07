@@ -20,7 +20,7 @@
                             <p class="relative text-3xl mb-1">
                                 {{ user.username }}
                             </p>
-                            <p class="relative">no motto</p>
+                            <p class="relative">{{ user.motto }}</p>
                         </div>
                     </jet-card>
                     <div class="flex flex-wrap -mx-4">
@@ -40,7 +40,7 @@
                                 <div
                                     class="flex justify-center items-center flex-1 p-6 overflow-hidden truncate"
                                 >
-                                    <p class="text-xl">435345</p>
+                                    <p class="text-xl">{{ user.credits }}</p>
                                 </div>
                             </jet-card>
                         </div>
@@ -60,7 +60,7 @@
                                 <div
                                     class="flex justify-center items-center flex-1 p-6 overflow-hidden truncate"
                                 >
-                                    <p class="text-xl">3455</p>
+                                    <p class="text-xl">{{ user.pixels }}</p>
                                 </div>
                             </jet-card>
                         </div>
@@ -96,7 +96,7 @@
                                 <div
                                     class="flex justify-center items-center flex-1 p-6 overflow-hidden truncate"
                                 >
-                                    <p class="text-xl">4545</p>
+                                    <p class="text-xl">44</p>
                                 </div>
                             </jet-card>
                         </div>
@@ -159,6 +159,11 @@ export default {
     setup() {
         const user = computed(() => usePage().props.value.auth.user);
         return { user };
+    },
+    data() {
+        return {
+            referralLinkCopied: false,
+        };
     },
 };
 </script>
