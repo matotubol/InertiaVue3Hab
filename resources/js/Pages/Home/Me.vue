@@ -17,7 +17,9 @@
                             <div
                                 class="absolute left-0 top-0 w-full h-full bg-gray-00 opacity-50 rounded-lg"
                             />
-                            <p class="relative text-3xl mb-1">matko</p>
+                            <p class="relative text-3xl mb-1">
+                                {{ user.username }}
+                            </p>
                             <p class="relative">no motto</p>
                         </div>
                     </jet-card>
@@ -138,6 +140,9 @@ import Layout from "@/Shared/Layout";
 import JetCard from "@/components/Card";
 import JetCardTitle from "@/components/CardTitle";
 import JetButton from "@/components/Button";
+import { computed } from "vue";
+import { usePage } from "@inertiajs/inertia-vue3";
+
 export default {
     components: {
         JetCard,
@@ -150,6 +155,10 @@ export default {
         socials: Array,
         shortname: String,
         articles: Object,
+    },
+    setup() {
+        const user = computed(() => usePage().props.value.auth.user);
+        return { user };
     },
 };
 </script>
