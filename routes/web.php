@@ -4,6 +4,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +26,11 @@ Route::middleware('guest')->group(function () {
 });
 
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/me', [IndexController::class, 'me'])->name('index.me');
+    Route::get('/client', [ClientController::class, 'index'])->middleware('auth')->name('client.index');
     Route::get('/logout', 'Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@destroy')
         ->name('auth.logout');
 });
+

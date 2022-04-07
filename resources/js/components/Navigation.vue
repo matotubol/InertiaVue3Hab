@@ -88,7 +88,11 @@ export default {
                 </li>
             </ul>
         </div>
-        <Link :href="route('auth.logout')" class="mr-2">
+        <Link
+            v-if="$page.props.auth.user"
+            :href="route('auth.logout')"
+            class="mr-2"
+        >
             <JetButton
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -5,6 +5,7 @@ import { createInertiaApp, Link } from "@inertiajs/inertia-vue3";
 import { InertiaProgress } from "@inertiajs/progress";
 import { ZiggyVue } from "ziggy";
 import { Ziggy } from "./ziggy";
+import Layout from "@/Shared/Layout";
 import "flowbite";
 
 const appName =
@@ -12,7 +13,13 @@ const appName =
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => require(`./Pages/${name}.vue`),
+    resolve: (name) => {
+        const page = require(`./Pages/${name}.vue`);
+        if (page.layout === undefined) {
+            page.layout = Layout;
+        }
+        return page;
+    },
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
             .use(plugin)

@@ -23,10 +23,13 @@ export default {
                 <jet-logo class="mr-10" />
 
                 <div class="hidden flex-1 mr-4 md:block">
-                    <Link href="/downloads">
+                    <Link
+                        v-if="$page.props.auth.user"
+                        :href="route('client.index')"
+                    >
                         <jet-button
                             class="bg-teal-500 mr-4 hover:bg-teal-600 active:bg-teal-600"
-                            >Download our client</jet-button
+                            >Enter Habnight</jet-button
                         >
                     </Link>
                 </div>

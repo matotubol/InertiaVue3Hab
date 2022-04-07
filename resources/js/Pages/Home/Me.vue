@@ -138,16 +138,12 @@
 <script>
 import Layout from "@/Shared/Layout";
 import JetCard from "@/components/Card";
-import JetCardTitle from "@/components/CardTitle";
-import JetButton from "@/components/Button";
 import { computed } from "vue";
 import { usePage } from "@inertiajs/inertia-vue3";
 
 export default {
     components: {
         JetCard,
-        JetCardTitle,
-        JetButton,
     },
     layout: Layout,
     props: {
