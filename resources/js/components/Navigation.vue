@@ -7,7 +7,7 @@ export default {
 };
 </script>
 <template>
-    <nav class="hidden items-center md:flex">
+    <nav class="w-full hidden items-center md:flex">
         <Link href="/me" class="mr-2">
             <JetButton
                 ><svg

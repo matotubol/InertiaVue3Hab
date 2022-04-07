@@ -11,9 +11,9 @@ export default {
 </script>
 <template>
     <main>
-        <div class="flex flex-col h-screen justify-between">
+        <div class="flex flex-col h-screen justify-between overflow-hidden">
             <jet-header />
-            <main class="-mt-24 mb-12">
+            <main class="mb-12 overflow-y-scroll">
                 <section class="container mx-auto px-4 md:px-0">
                     <slot />
                 </section>
