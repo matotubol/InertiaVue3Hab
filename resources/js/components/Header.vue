@@ -3,7 +3,7 @@ import JetLogo from "./Logo";
 import JetButton from "./Button";
 import JetNavigation from "./Navigation";
 import JetDropdown from "./Dropdown";
-import JetDropdownLink from "./DropdownLink";
+import ClientOpen from "@/Shared/Client";
 
 export default {
     components: {
@@ -11,7 +11,7 @@ export default {
         JetButton,
         JetNavigation,
         JetDropdown,
-        JetDropdownLink,
+        ClientOpen,
     },
     data: function () {
         return {
@@ -27,23 +27,7 @@ export default {
             <div class="flex py-10 items-center md:border-b md:border-teal-700">
                 <jet-logo class="mr-10" />
                 <div class="hidden flex-1 mr-4 md:block">
-                    <iframe
-                        v-if="$page.props.auth.user"
-                        v-show="ShowClient"
-                        style="
-                            top: 0;
-                            left: 0;
-                            bottom: 0;
-                            right: 0;
-                            width: 100%;
-                            height: 50%;
-                            border: none;
-                            margin: 0;
-                            padding: 0;
-                        "
-                        :src="'http://localhost:8000/nitro/index.html?sso='"
-                        frameborder="0"
-                    ></iframe>
+                    <client-open v-show="ShowClient"></client-open>
                     <Link
                         v-if="$page.props.auth.user"
                         @click="ShowClient ^= true"
