@@ -10,6 +10,9 @@ export default {
     <nav class="w-full hidden items-center md:flex">
         <Link :href="route('index.me')" class="mr-2">
             <JetButton
+                :class="{
+                    'border-b-4 border-blue-500': $page.url === '/me' || '/',
+                }"
                 ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="mr-3 h-5 w-5"
@@ -29,6 +32,9 @@ export default {
         </Link>
         <JetButton
             id="dropdownDefault"
+            :class="{
+                'border-b-4 border-blue-500': $page.url === '/cummunity',
+            }"
             data-dropdown-toggle="dropdown"
             class="text-white focus:outline-none focus:ring-blue-300 font-medium text-center inline-flex items-center"
             type="button"
