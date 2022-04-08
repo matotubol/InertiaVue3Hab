@@ -27,7 +27,10 @@ export default {
             <div class="flex py-10 items-center md:border-b md:border-teal-700">
                 <jet-logo class="mr-10" />
                 <div class="hidden flex-1 mr-4 md:block">
-                    <client-open v-show="ShowClient"></client-open>
+                    <client-open
+                        v-if="$page.props.auth.user"
+                        v-show="ShowClient"
+                    ></client-open>
                     <Link
                         v-if="$page.props.auth.user"
                         @click="ShowClient ^= true"

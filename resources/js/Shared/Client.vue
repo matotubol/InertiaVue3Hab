@@ -17,7 +17,7 @@ export default {
             bottom: 0;
             right: 0;
             width: 100%;
-            height: 80%;
+            height: 100%;
             border: none;
             margin: 0;
             padding: 0;
