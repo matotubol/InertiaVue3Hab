@@ -1,12 +1,14 @@
 <script>
 import JetHeader from "@/components/Header";
 import JetFooter from "@/components/Footer";
+import Client from "@/Shared/Client";
 
 export default {
     components: {
         JetHeader,
         JetFooter,
     },
+    layout: Client,
 };
 </script>
 <template>

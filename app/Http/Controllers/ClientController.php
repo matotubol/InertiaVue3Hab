@@ -15,7 +15,7 @@ class ClientController extends Controller
         $user->auth_ticket = Str::random(60);
         $user->save();
 
-        return Inertia::render('Home/Client');
+        return Inertia::render('Client');
     }
 
 }

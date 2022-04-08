@@ -13,6 +13,11 @@ export default {
         JetDropdown,
         JetDropdownLink,
     },
+    data: function () {
+        return {
+            ShowClient: false,
+        };
+    },
 };
 </script>
 
@@ -21,11 +26,27 @@ export default {
         <div class="container mx-auto px-4 md:px-0">
             <div class="flex py-10 items-center md:border-b md:border-teal-700">
                 <jet-logo class="mr-10" />
-
                 <div class="hidden flex-1 mr-4 md:block">
+                    <iframe
+                        v-if="$page.props.auth.user"
+                        v-show="ShowClient"
+                        style="
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            width: 100%;
+                            height: 50%;
+                            border: none;
+                            margin: 0;
+                            padding: 0;
+                        "
+                        :src="'http://localhost:8000/nitro/index.html?sso='"
+                        frameborder="0"
+                    ></iframe>
                     <Link
                         v-if="$page.props.auth.user"
-                        :href="route('client.index')"
+                        @click="ShowClient ^= true"
                     >
                         <jet-button
                             class="bg-teal-500 mr-4 hover:bg-teal-600 active:bg-teal-600"
